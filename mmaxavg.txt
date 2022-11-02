@@ -1,0 +1,16 @@
+1. Pobierz minimalną cenę produktu
+SELECT `name`, `supplier_id`, `category_id`, `unit`, MIN(`price`) FROM `products`;
+2. Pobierz maksymalną cenę produktu
+SELECT `name`, `supplier_id`, `category_id`, `unit`, MAX(`price`) FROM `products`;
+3. Pobierz liczbę wszystkich produktów
+SELECT COUNT(`supplier_id`) FROM `products`;
+4. Pobierz liczbę wszystkich klientów
+SELECT COUNT(`customer_name`) FROM `customers`;
+5. Pobierz liczbę klientów pogrupowanych po kraju
+SELECT COUNT(`country`) FROM `customers` GROUP BY country;
+6. Pobierz liczbę produktów z kategorii 1 i ich średnią cenę
+SELECT `category_id`, AVG(`price`) FROM `products` WHERE category_id = 1;
+7. Pobierz sumę ceny produktów z kategorii 2
+SELECT `category_id`, SUM(`price`) FROM `products` WHERE category_id = 2;
+8. Pobierz maksymalne ceny produktów z kategorii 1 i 2.
+SELECT `category_id`, MAX(`price`) FROM `products` GROUP by category_id;
