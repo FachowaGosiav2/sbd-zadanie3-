@@ -13,4 +13,4 @@ SELECT `category_id`, AVG(`price`) FROM `products` WHERE category_id = 1;
 7. Pobierz sumę ceny produktów z kategorii 2
 SELECT `category_id`, SUM(`price`) FROM `products` WHERE category_id = 2;
 8. Pobierz maksymalne ceny produktów z kategorii 1 i 2.
-SELECT `category_id`, MAX(`price`) FROM `products` WHERE category_id = 1 or category_id = 2 GROUP by category_id;
+SELECT `category_id`, MAX(`price`) FROM `products` WHERE category_id = 1 and category_id = 2 GROUP by category_id;
