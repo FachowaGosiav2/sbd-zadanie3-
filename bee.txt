@@ -1,0 +1,14 @@
+1. Pobierz produkty których cena mieści sie między 10 i 20
+SELECT `price` FROM `products` WHERE price BETWEEN 10 AND 20;
+2. Pobierz produkty których cena jest poza przedziałem 10 i 20
+SELECT `price` FROM `products` WHERE price NOT BETWEEN 10 AND 20;
+3. Pobierz wszystkie produkty z kategorii 1,2,3 używając IN
+SELECT `category_id` FROM `products` WHERE category_id IN (1,2,3);
+4. Pobierz wszystkie zamówienia gdzie shipper_id jest w 1,2,3, użyj IN
+SELECT shipper_id FROM `orders` WHERE shipper_id IN (1,2,3);
+5. Pobierz produkty których cena jest w przedziale 10 i 15, ale te produkty nie są w kategoriach 1,2,3,4
+SELECT `category_id` FROM `products` WHERE (category_id BETWEEN 10 and 15) and (category_id NOT IN (1,2,3,4,5));
+6. Pobierz zamówienia złożone od 1996-07-01 do 1996-07-31
+SELECT * FROM `orders` WHERE `order_date` BETWEEN '1996-7-01 00:00:00' AND '1996-7-31 00:00:00';
+7. Stwórz subquery pobierające klientów o id z przedziału 77, 90. Pobierz wszystkie zamówienia ograniczając je do subquery z pierwszej cześci zadania
+SELECT * FROM orders WHERE customer_id IN (SELECT customer_id FROM orders WHERE customer_id BETWEEN 77 and 90)
