@@ -1,0 +1,12 @@
+## JOIN, INNER JOIN, LEFT JOIN, RIGHT JOIN, Self Join
+1. Pobierz dane klientów i dane o ich zamówieniach
+SELECT c.customer_name, o.id FROM `customers` c LEFT JOIN orders o ON o.customer_id = c.id;
+2. Pobierz dane wszystkich klientów i wyświet liczbę zamówień które złożyli
+SELECT c.customer_name, COUNT(o.id) FROM `customers` c INNER JOIN orders o ON o.customer_id = c.id GROUP BY c.id;
+3. Pobierz dane tylko tych klientów którzy złożyli zamówienie
+SELECT c.customer_name, o.id FROM `customers` c INNER JOIN orders o ON o.customer_id = c.id;
+4. Pobierz dane zamówień wszystkich pracowników (użyj RIGHT JOIN)
+SELECT c.customer_name, o.id FROM orders o RIGHT JOIN customers c ON c.id = o.customer_id;
+5. Stwórz pary klientów którzy są z tego samego miasta
+SELECT a.customer_name , b.customer_name, a.city FROM customers a, customers b WHERE a.id <> b.id AND a.city = b.city ORDER BY a.city;
+
