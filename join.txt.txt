@@ -8,5 +8,5 @@ SELECT c.customer_name, o.id FROM `customers` c INNER JOIN orders o ON o.custome
 4. Pobierz dane zamówień wszystkich pracowników (użyj RIGHT JOIN)
 SELECT c.customer_name, o.id FROM orders o RIGHT JOIN customers c ON c.id = o.customer_id;
 5. Stwórz pary klientów którzy są z tego samego miasta
-SELECT a.customer_name , b.customer_name, a.city FROM customers a, customers b WHERE a.id <> b.id AND a.city = b.city ORDER BY a.city;
+SELECT a.customer_name , b.customer_name, a.city FROM customers a JOIN customers b WHERE a.id <> b.id AND a.city = b.city;
 
