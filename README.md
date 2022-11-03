@@ -17,3 +17,10 @@
 6. Pobierz liczbę produktów z kategorii 1 i ich średnią cenę
 7. Pobierz sumę ceny produktów z kategorii 2
 8. Pobierz maksymalne ceny produktów z kategorii 1 i 2.
+9. 
+## JOIN, INNER JOIN, LEFT JOIN, RIGHT JOIN, Self Join
+1. Pobierz dane klientów i dane o ich zamówieniach
+2. Pobierz dane wszystkich klientów i wyświet liczbę zamówień które złożyli
+3. Pobierz dane tylko tych klientów którzy złożyli zamówienie
+4. Pobierz dane zamówień wszystkich pracowników (użyj RIGHT JOIN)
+5. Stwórz pary klientów którzy są z tego samego miasta
