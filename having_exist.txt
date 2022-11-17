@@ -1,0 +1,8 @@
+SELECT `country` FROM `customers` HAVING COUNT(id) > 5;
+SELECT c.id, c.customer_name, COUNT(o.customer_id) FROM customers as c JOIN orders as o ON o.customer_id = c.id GROUP by c.id HAVING COUNT(o.customer_id) > 2 and COUNT(o.customer_id) < 5 ORDER BY `c`.`id` desc;
+SELECT c.id, c.customer_name, COUNT(o.customer_id) FROM customers as c JOIN orders as o ON o.customer_id = c.id GROUP by c.id HAVING COUNT(o.customer_id) < 10 ORDER BY `COUNT(o.customer_id)` DESC;
+SELECT e.id, e.last_name, COUNT(o.employee_id) FROM employees AS e JOIN orders AS o ON o.employee_id = e.id WHERE e.last_name = 'Davolio' OR e.last_name = 'Fuller' GROUP BY e.id HAVING COUNT(o.employee_id) > 25;
+SELECT s.name FROM suppliers AS s WHERE EXISTS (SELECT p.price FROM products AS p WHERE p.price < 20 AND s.id = p.supplier_id);
+SELECT s.name FROM suppliers AS s WHERE EXISTS (SELECT p.price FROM products AS p WHERE p.price = 22 AND s.id = p.supplier_id);
+
+
